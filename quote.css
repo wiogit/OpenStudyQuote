@@ -1,0 +1,12 @@
+.quote-post:hover {
+  text-decoration: underline;
+}
+
+.quote-post {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: #00b1f2;
+  cursor: pointer;
+}
