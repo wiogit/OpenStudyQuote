@@ -13,11 +13,13 @@ function checkForLinks() {
   if (question.length > 0) {
     if (question.find('.os-quote-button').length == 0) {
       question.find('ul.update-info').append(createQuoteLink());
+      question.find('ul.update-info').append(createCopyLink());
     }
   }
   replies.each(function () {
     if($(this).find('.os-quote-button').length == 0) {
       $(this).find('ul.update-info').append(createQuoteLink());
+      $(this).find('ul.update-info').append(createCopyLink());
     }
   });
 }

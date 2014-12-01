@@ -12,6 +12,19 @@ function createQuoteLink() {
   return li;
 }
 
+function createCopyLink() {
+  var button = $(document.createElement('button'))
+    .addClass('update-info')
+    .addClass('os-copy-button')
+    .addClass('copy-post')
+    .text('Copy')
+    .click(makeCopy);
+  var li = $(document.createElement('li'))
+    .addClass('update-info')
+    .append(button);
+  return li;
+}
+
 function makeQuote() {
   var post = $(this).parents('h2.post');
   if (post.length == 0) {
@@ -20,7 +33,19 @@ function makeQuote() {
   insertQuote(post.OpenStudyQuoteText());
 }
 
+function makeCopy() {
+  var post = $(this).parents('h2.post');
+  if (post.length == 0) {
+    post = $(this).parents('li.post.reply');
+  }
+  insertCopy(post.OpenStudyCopyText());
+}
+
 function insertQuote(body) {
+  $('textarea#reply-body').insertAtCaret(body).fireEvent('keyup');
+}
+
+function insertCopy(body) {
   $('textarea#reply-body').insertAtCaret(body).fireEvent('keyup');
 }
 

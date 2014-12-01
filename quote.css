@@ -1,8 +1,8 @@
-.quote-post:hover {
+.quote-post:hover, .copy-post:hover {
   text-decoration: underline;
 }
 
-.quote-post {
+.quote-post, .copy-post {
   background: transparent;
   border: 0;
   margin: 0;
