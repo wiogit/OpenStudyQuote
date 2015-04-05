@@ -11,7 +11,7 @@ $.fn.extend({
             clone.find('#' + id + '-Frame').remove();
             var rawTex = $(this).text();
             var showTex = '\\(' + rawTex + '\\)';
-            $(this).replaceWith(showTex);
+            $(this).text(showTex);
         });
         
         displayTex.each(function() {
@@ -19,17 +19,17 @@ $.fn.extend({
             clone.find('#' + id + '-Frame').remove();
             var rawTex = $(this).text();
             var showTex = '\\[' + rawTex + '\\]';
-            $(this).replaceWith(showTex);
+            $(this).text(showTex);
         });
         
         inlineCode.each(function() {
             var rawCode = $(this).text();
-            $(this).replaceWith('`' + rawCode + '`');
+            $(this).text('`' + rawCode + '`');
         });
         
         blockCode.each(function() {
             var rawCode = $(this).text();
-            $(this).replaceWith('```\n' + rawCode + '```\n');
+            $(this).text('```\n' + rawCode + '```\n');
         });
         
         return clone.text();
